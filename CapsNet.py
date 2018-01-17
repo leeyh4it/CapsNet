@@ -95,38 +95,6 @@ for i in range(routing_num):
 
         b += agreement
 
-
-    # routing_weights = tf.nn.softmax(raw_weights, dim=2, name="routing_weights")
-    #
-    # weighted_predictions = tf.multiply(routing_weights, caps2_predicted,
-    #                                    name="weighted_predictions")
-    # weighted_sum = tf.reduce_sum(weighted_predictions, axis=1, keep_dims=True,
-    #                              name="weighted_sum")
-    #
-    # caps2_output_round_1 = squash(weighted_sum, axis=-2)
-    #
-    # caps2_output_round_1_tiled = tf.tile(
-    #     caps2_output_round_1, [1, caps1_n_caps, 1, 1, 1],
-    #     name="caps2_output_round_1_tiled")
-    #
-    # agreement = tf.matmul(caps2_predicted, caps2_output_round_1_tiled,
-    #                       transpose_a=True, name="agreement")
-    #
-    # raw_weights_round_2 = tf.add(raw_weights, agreement,
-    #                              name="raw_weights_round_2")
-    #
-    # routing_weights_round_2 = tf.nn.softmax(raw_weights_round_2,
-    #                                         dim=2,
-    #                                         name="routing_weights_round_2")
-    # weighted_predictions_round_2 = tf.multiply(routing_weights_round_2,
-    #                                            caps2_predicted,
-    #                                            name="weighted_predictions_round_2")
-    # weighted_sum_round_2 = tf.reduce_sum(weighted_predictions_round_2,
-    #                                      axis=1, keep_dims=True,
-    #                                      name="weighted_sum_round_2")
-    # caps2_output_round_2 = squash(weighted_sum_round_2,
-    #                               axis=-2)
-
 caps2_output = vj
 '''Length'''
 def safe_norm(s, axis=-1, epsilon=1e-7, keep_dims=False, name=None):
